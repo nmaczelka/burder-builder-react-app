@@ -6,10 +6,10 @@ import BackDrop from '../Backdrop/Backdrop';
 
 class Modal extends Component {
     
-    //Ez a rész azért kellett mert ha ez nem klenne akkor hiába a this.props.show false akkor is 
+    //Ez a rész azért kellett mert ha ez nem lenne akkor hiába a this.props.show false akkor is 
     //meghívja az OrderSummary.js-t {this.props.children} miatt. de a shouldComponentUpdate megakadályozza hogy ki legyen renderelve
     shouldComponentUpdate(nextProps, nextState) {
-        return nextProps.show !== this.props.show;
+        return nextProps.show !== this.props.show || nextProps.children !== this.props.children;
     }
 
     componetWillUpdate(){
